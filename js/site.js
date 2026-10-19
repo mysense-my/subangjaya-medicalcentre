@@ -147,13 +147,18 @@
     });
   });
 
-  /* ---------------------------------------------------------- contact form (mockup: no endpoint yet) */
+  /* ---------------------------------------------------------- booking form: opens a pre-filled WhatsApp chat (copy deck section 8) */
   var form = $(".ct-form");
-  form.addEventListener("submit", function (e) {
+  if (form) form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    $(".ctf-ok", form).hidden = false;
-    form.reset();
+    var f = form.elements, doc = form.getAttribute("data-doc"), ref = form.getAttribute("data-ref");
+    var msg = "Hi, I'd like a consult with " + doc + ". Concern: " + f.concern.value + ". Preferred day: " + f.day.value + ". " +
+      (f.language ? "Language: " + f.language.value + ". " : "") +
+      "Payment: " + f.payment.value + ". Name: " + f.name.value.trim() + ". Ref: " + ref;
+    var url = "https://wa.me/" + form.getAttribute("data-wa") + "?text=" + encodeURIComponent(msg);
+    form.setAttribute("data-last-url", url);
+    window.open(url, "_blank", "noopener");
   });
 
   /* ---------------------------------------------------------- scroll-target transforms (Framer onScrollTarget, threshold .5) */

@@ -1,12 +1,16 @@
-# Subang Jaya Medical Centre: Heart Health landing page
+# Subang Jaya Medical Centre: heart specialist landing pages
 
-Static landing page mockup (HTML, CSS, JS) for SJMC's cardiology service, prepared by MYSense for the SJMC
-SEM proposal. No build step is needed to view it: serve this folder and open `index.html`.
+Static landing page mockups (HTML, CSS, JS) prepared by MYSense for the SJMC SEM proposal:
+
+- `shah-alam/`: Heart specialist for Shah Alam, Dr Mohamed Nazrul
+- `cheras/`: Heart specialist for Cheras, Dr Thurston Erng
+
+No build step is needed to view them: serve this folder and open `index.html`.
 
 ```
 python3 -m http.server 8000
 ```
 
-Before go-live, SJMC to supply or confirm: real cardiac patient quotes (slides 2 to 4 are marked samples),
-clinical sign-off on the procedure and condition descriptions, its own photography in place of the stock
-placeholders, and the form endpoint for the CRM / lead nurturing flow.
+Anything in [square brackets] on the pages is a placeholder SJMC or the doctor still has to fill or confirm
+(drive times, fees, referral rule, insurance panels, patient stories, PDPA wording, tracked WhatsApp number,
+KKLIU approval number). Both pages need each doctor's sign-off and KKLIU approval before go-live.
