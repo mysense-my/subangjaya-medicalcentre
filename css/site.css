@@ -755,3 +755,44 @@ section[id] { scroll-margin-top: 0; }
   .frow > .fld:only-child { flex: 1; }
   .cc-cta { padding: 32px 24px; height: auto; min-height: 320px; }
 }
+
+/* ================================================================ doctor profile emphasis (19 Oct 2026, pm)
+   Doctor photos are never cropped or tinted: always the whole 3:4 file, object-fit: contain, on a light backdrop. */
+.portrait { display: block; aspect-ratio: 3 / 4; object-fit: contain; object-position: 50% 100%; }
+.doc-bg, .pf-left, .hw-doc, .bc-doc { background: linear-gradient(160deg, #eef4fc 0%, #cddff4 100%); }
+/* hero badge: tiny full portrait instead of a circle crop */
+.avs .av-full { width: 24px; height: 32px; object-fit: contain; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .6); background: linear-gradient(160deg, #eef4fc 0%, #cddff4 100%); }
+/* hero enquiries widget */
+.hw-doc { flex: 1; min-height: 0; margin: 0 6px 6px; padding: 0; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; align-items: flex-end; }
+.hw-doc .portrait { height: 100%; width: auto; max-width: 100%; border-radius: 0; object-fit: contain; }
+/* profile: sticky left card holds the whole portrait */
+.pf-left { justify-content: flex-start; gap: 24px; }
+.pf-left .cl-h { color: var(--navy); }
+.pf-role { font: 400 16px/24px var(--f-body); color: var(--body); max-width: 460px; }
+.pf-left .cl-top { gap: 16px; }
+.pf-left .cl-div { width: 100%; margin-top: 8px; background: rgba(10, 60, 131, .14); }
+.pf-photo { position: relative; flex: 1 1 auto; min-height: 0; margin: 0 -40px -40px; }
+.pf-photo .portrait { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: 100%; width: auto; max-width: 100%; }
+.profile-sec .cc { gap: 32px; }
+.profile-sec .cc-tb p { font-size: 17px; line-height: 26px; color: #2c3e50; }
+.cta-q { position: relative; font: 500 20px/28px var(--f-head); color: rgba(255, 255, 255, .85); max-width: 380px; }
+/* first visit: clinic days on the white side card */
+.days-light { width: 100%; }
+.days-light .day { height: 28px; background: #eef3f9; color: #9aa7b8; font-size: 12px; }
+.days-light .day.on { background: var(--navy); color: #fff; }
+.rate p small { display: block; margin-top: 4px; font-size: 12px; line-height: 18px; color: var(--muted); }
+/* news card with the doctor's photo */
+.bc-doc .portrait { width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; border-radius: 0; }
+@media (max-width: 1199.98px) {
+  .pf-left { padding: 24px; }
+  .pf-photo { margin: 0 -24px -24px; }
+  .pf-left .cl-h { font-size: 28px; line-height: 32px; letter-spacing: -1.12px; }
+  .pf-role { font-size: 15px; line-height: 22px; }
+}
+@media (max-width: 809.98px) {
+  .pf-left { padding: 24px 24px 0; gap: 20px; }
+  .pf-left .cl-div { display: none; }
+  .pf-photo { flex: none; height: 360px; margin: 0 -24px; }
+  .profile-sec .cc-tb p { font-size: 15px; line-height: 22.5px; }
+  .cta-q { font-size: 18px; line-height: 25px; }
+}
